@@ -67,11 +67,8 @@ router.get(
         const user_guilds = await user_guilds_nojson.json();
         req.session.discord.userGuilds = user_guilds;
         req.session.discord.guildsCounter = Object.keys(user_guilds).length;
-        console.log(req.session.discord.guildsCounter );
-        for (const [key, value] of user_guilds.entries()) {
-            console.log(key, value.name)
-        }
-        res.redirect(`/`);
+
+        res.redirect(`/servers`);
     })
 );
 

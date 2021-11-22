@@ -19,11 +19,23 @@ app.use(
 
 app.get("/", (req, res) => {
     let userlogged = req.session.discord || null,
+        text;
+    if (userlogged) {
+        req.session.destroy();
+        userlogged = null;
+    } else {
+        text = "You have to Log In";
+    }
+
+    res.render(__dirname + "/views/index", {});
+});
+
+app.get("/servers", (req, res) => {
+    let userlogged = req.session.discord || null,
         serverCounter,
         guildsList,
         text;
 
-    // console.log(userlogged);
     if (userlogged) {
         text =
             "Logged as " +
@@ -37,10 +49,10 @@ app.get("/", (req, res) => {
         text = "You have to Log In";
     }
 
-    res.render(__dirname + "/views/index", {
+    res.render(__dirname + "/views/servers", {
         loggedMsg: text,
         serverCounter: serverCounter,
-        guildsList: guildsList
+        guildsList: guildsList,
     });
 });
 
