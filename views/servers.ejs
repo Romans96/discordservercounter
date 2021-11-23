@@ -33,13 +33,16 @@
             </div>
             <div class="verticalList">
                 <table>
-                    <% if (guildsList) { %> <% for (var [key, value] of
-                    guildsList.entries()) { %>
-                    <tr>
-                        <td><%= (key+1) %></td>
-                        <td><%= value.name %></td>
-                    </tr>
-                    <% } %> <% } %>
+                    <% if (guildsList) { %> 
+                        <% guildsList = guildsList.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)) %>
+                        <% for (var [key, value] of guildsList.entries()) { %>
+                            <tr>
+                                <td><%= (key+1) %></td>
+                                <td><%= value.name %></td>
+                                <td><%= value.description %></td>
+                            </tr>
+                        <% } %> 
+                    <% } %>
                 </table>
             </div>
         </div>
