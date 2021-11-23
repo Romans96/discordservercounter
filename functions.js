@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-var utils = {
+var functions = {
     // async/await error catcher
     catchAsync: (fn) => (req, res, next) => {
         const routePromise = fn(req, res, next);
@@ -35,7 +35,7 @@ var utils = {
             return { error: "Error on getBasicAuth function!" };
         }
     },
-    apiAuth: async (url, token_type, access_token) => {
+    tokenAuth: async (url, token_type, access_token) => {
         try {
             const res = await fetch(url, {
                 headers: {
@@ -47,16 +47,15 @@ var utils = {
 
             if (res) return { error: null, res: res };
             else {
-                console.log("Error on apiAuth function!", err);
-                return { error: "Error on apiAuth function!" };
+                console.log("Error on tokenAuth function!", err);
+                return { error: "Error on tokenAuth function!" };
             }
         } catch (err) {
-            console.log("Error on apiAuth function!", err);
-            return { error: "Error on apiAuth function!" };
+            console.log("Error on tokenAuth function!", err);
+            return { error: "Error on tokenAuth function!" };
         }
     },
-
-    getGuildBanner: async (guildId, guildIconhash) => {
+    getGuildIcon: async (guildId, guildIconhash) => {
         try {
             // console.log(guildId, guildIconhash);
             const guildBanner = await fetch(
@@ -77,4 +76,4 @@ var utils = {
     },
 };
 
-module.exports = utils;
+module.exports = functions;
