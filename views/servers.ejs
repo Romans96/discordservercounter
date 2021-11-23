@@ -19,32 +19,40 @@
         />
     </head>
     <body>
-        <div class="container">
-            <div class="msgs">
-                <p class="serverCounter"><%= serverCounter %></p>
+        <div class="mainContainer">
+            <div class="messagesContainer">
                 <div class="loginContainer">
-                    <p class="loggedMsg"><%= loggedMsg %></p>
                     <% if (logged == true) { %>
-                        <a href="/">Logout</a>
+                        <div class="logout"><b><a href="/">[-</a></b></div>
                     <% } else {%>
                         <a href="/">Back to Login Page</a>
                     <% } %>
+                    <p class="loggedMsg"><%= loggedMsg %></p>
+                </div>
+                <div class="counterContainer">
+                    <% if (logged == true) { %>
+                        <div class="serverCounter"><%= serverCounter %></div>
+                        <div class="textCounter">Total server you <br />are participating in</div>
+                    <% } %>
                 </div>
             </div>
-            <div class="verticalList">
-                <table>
-                    <% if (guildsList) { %> 
-                        <% guildsList = guildsList.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)) %>
-                        <% for (var [key, value] of guildsList.entries()) { %>
-                            <tr>
-                                <td><%= (key+1) %></td>
-                                <td><%= value.name %></td>
-                                <td><%= value.description %></td>
-                            </tr>
-                        <% } %> 
-                    <% } %>
-                </table>
-            </div>
+            <% if (logged == true) { %>
+                <p class="serverListText">Server List</p>
+                <div class="verticalList">
+                    <table>
+                        <% if (guildsList) { %> 
+                            <% guildsList = guildsList.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)) %>
+                            <% for (var [key, value] of guildsList.entries()) { %>
+                                <tr>
+                                    <td class="serverNumber" ><%= (key+1) %></td>
+                                    <td class="serverIcon" style="background: no-repeat url(<%= value.iconImage; %>); background-size: contain;"></td>
+                                    <td class="serverName"><%= value.name %></td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                    </table>
+                </div>
+            <% } %>
         </div>
     </body>
 </html>

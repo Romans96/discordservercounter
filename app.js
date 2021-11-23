@@ -34,6 +34,7 @@ app.get("/servers", (req, res) => {
     let userlogged = req.session.discord || null,
         serverCounter,
         guildsList,
+        images,
         text,
         logged;
 
@@ -44,7 +45,7 @@ app.get("/servers", (req, res) => {
             ":" +
             req.session.discord.userInfo.discriminator;
         serverCounter = req.session.discord.guildsCounter;
-        guildsList = req.session.discord.userGuilds;
+        guildsList = req.session.discord.userGuilds,
         logged = true;
         // console.log(guildsList)
     } else {

@@ -1,3 +1,8 @@
+:root {
+    --main-char-color: #e8e6e3;
+    --main-bg-color: #181a1b;
+}
+
 html,
 body {
     overflow: hidden;
@@ -5,43 +10,115 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #181a1b;
-    color: #e8e6e3;
+    background-color: var(--main-bg-color);
+    color: var(--main-char-color);
 }
-.container {
+.mainContainer {
     display: flex;
     order: 1;
     height: 100vh;
     flex-flow: column;
     flex-wrap: nowrap;
     align-items: stretch; /* vertically */
+    justify-content: space-between;
 }
-.msgs {
+.messagesContainer {
     overflow: hidden;
     display: flex;
-    order: 2;
-    height: 15vh;
+    order: 5;
+    height: 10vh;
+    margin: 0 5vw 0 5vw; /* top right bottom left */
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between; /* horizontally */
     align-items: center;
-    
-    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: "Mochiy Pop One", sans-serif;
+    border-bottom: 1px dashed blue;
 }
-a {
-    /* text-decoration: none; */
-    color: -webkit-link;
+.loginContainer {
+    display: flex;
+    order: 10;
+    flex-direction: row;
+    align-items: center;
+}
+.logout {
+    display: flex;
+    order: 11;
+    font-family: "Helvetica", "Arial", sans-sefir;
+    font-size: 1.1rem;
+    margin-left: 10px;
+    background: rgb(33, 53, 125);
+    border-radius: 50%;
+    padding: 5px 10px 7px 11px;
+    margin-right: 3px;
+    border: 2px solid var(--main-char-color);
+}
+.logout:hover {
+    border: 2px solid black;
+}
+.logout a:hover {
+    color: var(--main-char-color);
+}
+.counterContainer {
+    display: flex;
+    order: 15;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.serverCounter {
+    /* display: flex;
+    order: 17; */
+    margin-right: 10px;
+    background: rgb(33, 53, 125);
+    border-radius: 50%; 
+    padding: 10px; 
+} 
+
+/* Servers List css */
+.serverListText {
+    display: flex;
+    align-self: center;
+    order: 20;
+    font-family: "Mochiy Pop One", sans-serif;
 }
 .verticalList {
     display: flex;
-    order: 3;
-    height: 85vh;
+    order: 25;
+    height: 75vh;
     overflow-y: auto;
+    border-top: 5px dotted grey;
+    border-left: 5px dotted grey;
 }
-table {
+.verticalList table {
     flex: 1;
-    order: 20;
+    order: 26;
+    font-size: 1.5rem;
+    padding: 15px;
 }
-td {
+.verticalList table tr {
     /* border: 1px dotted; */
     text-align: center;
+}
+
+.verticalList table td.serverIcon {
+    display: flex;
+    /* flex-grow: 1; */
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+}
+.verticalList table td.serverName {
+    /* border: 0.1rem solid white; */
+    background: darkmagenta;
+    border-radius: 10%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+p {
+    margin: 0;
+    padding: 0;
 }
