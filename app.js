@@ -34,7 +34,8 @@ app.get("/servers", (req, res) => {
     let userlogged = req.session.discord || null,
         serverCounter,
         guildsList,
-        text;
+        text,
+        logged;
 
     if (userlogged) {
         text =
@@ -44,15 +45,18 @@ app.get("/servers", (req, res) => {
             req.session.discord.userInfo.discriminator;
         serverCounter = req.session.discord.guildsCounter;
         guildsList = req.session.discord.userGuilds;
+        logged = true;
         // console.log(guildsList)
     } else {
         text = "You have to Log In";
+        logged = false;
     }
 
     res.render(__dirname + "/views/servers", {
         loggedMsg: text,
         serverCounter: serverCounter,
         guildsList: guildsList,
+        logged: logged
     });
 });
 

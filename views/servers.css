@@ -1,0 +1,47 @@
+html,
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #181a1b;
+    color: #e8e6e3;
+}
+.container {
+    display: flex;
+    order: 1;
+    height: 100vh;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: stretch; /* vertically */
+}
+.msgs {
+    overflow: hidden;
+    display: flex;
+    order: 2;
+    height: 15vh;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+a {
+    /* text-decoration: none; */
+    color: -webkit-link;
+}
+.verticalList {
+    display: flex;
+    order: 3;
+    height: 85vh;
+    overflow-y: auto;
+}
+table {
+    flex: 1;
+    order: 20;
+}
+td {
+    /* border: 1px dotted; */
+    text-align: center;
+}
