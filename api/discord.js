@@ -14,7 +14,7 @@ const CLIENT_ID = process.env.CLIENT_ID;
 (CLIENT_SECRET = process.env.CLIENT_SECRET),
     (PORT = process.env.PORT),
     (BASE_REDIRECT = process.env.BASE_REDIRECT),
-    (REDIRECT_URI = BASE_REDIRECT + ":" + PORT + "/api/discord/callback");
+    (REDIRECT_URI = BASE_REDIRECT + "/:3083"+"/api/discord/callback");
 router.get("/login", (req, res) => {
     res.redirect(
         `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify guilds&response_type=code&redirect_uri=${REDIRECT_URI}`
@@ -23,7 +23,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get(
-    "/callback",
+    "/:3083/api/discord/callback",
     catchAsync(async (req, res) => {
         if (!req.query.code) throw new Error("NoCodeProvided");
         // console.log(req.query.code)
