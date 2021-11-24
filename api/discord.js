@@ -27,6 +27,7 @@ router.get(
     catchAsync(async (req, res) => {
         if (!req.query.code) throw new Error("NoCodeProvided");
         // console.log(req.query.code)
+        console.log("Join in callback function")
         const code = req.query.code;
         // console.log("Code:", code, CLIENT_ID, CLIENT_SECRET);
 
@@ -83,7 +84,7 @@ router.get(
         req.session.discord.guildsCounter = Object.keys(user_guilds).length;
         // ##
 
-        res.redirect(`/:3083/servers`);
+        res.redirect(`/servers`);
     })
 );
 
