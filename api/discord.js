@@ -23,7 +23,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get(
-    "/api/discord/callback",
+    "/callback",
     catchAsync(async (req, res) => {
         if (!req.query.code) throw new Error("NoCodeProvided");
         // console.log(req.query.code)
