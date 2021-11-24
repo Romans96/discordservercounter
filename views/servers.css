@@ -85,11 +85,13 @@ body {
 .verticalList {
     display: flex;
     order: 25;
-    height: 70vh;
+    height: 75vh;
+    margin-top: 2vh;
     margin-bottom: auto;
     overflow-y: auto;
     border-top: 5px dotted grey;
     border-left: 5px dotted grey;
+    border-bottom: 5px dotted grey;
 }
 .verticalList table {
     flex: 1;
