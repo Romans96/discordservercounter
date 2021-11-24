@@ -101,6 +101,8 @@ body {
 }
 .verticalList table tr {
     /* border: 1px dotted; */
+    display: flex;
+    align-items: center;
     text-align: center;
 }
 
@@ -116,6 +118,7 @@ body {
     /* border: 0.1rem solid white; */
     background: rgba(46, 38, 101, 0.6);
     border-radius: 10%;
+    width: 100%;
 }
 
 a {
