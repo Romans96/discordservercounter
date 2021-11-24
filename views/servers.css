@@ -30,7 +30,7 @@ body {
     overflow: hidden;
     display: flex;
     order: 5;
-    height: 10vh;
+    height: 20vh;
     margin: 0 5vw 0 5vw; /* top right bottom left */
     flex-direction: row;
     justify-content: space-between; /* horizontally */
@@ -84,6 +84,7 @@ body {
 /* Servers List css */
 .serverListText {
     display: flex;
+    height: 5vh;
     align-self: center;
     order: 20;
     font-family: "Mochiy Pop One", sans-serif;
