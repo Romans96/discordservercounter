@@ -111,6 +111,7 @@ body {
 .verticalList table td.serverName {
     /* border: 0.1rem solid white; */
     background: darkmagenta;
+    opacity: 0.4;
     border-radius: 10%;
 }
 
