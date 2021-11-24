@@ -81,13 +81,14 @@ body {
     align-self: center;
     order: 20;
     font-family: "Mochiy Pop One", sans-serif;
+    margin: auto;
 }
 .verticalList {
     display: flex;
     order: 25;
     height: 75vh;
-    margin-top: 2vh;
-    margin-bottom: auto;
+    /* margin-top: 2vh; */
+    /* margin-bottom: auto; */
     overflow-y: auto;
     border-top: 5px dotted grey;
     border-left: 5px dotted grey;
