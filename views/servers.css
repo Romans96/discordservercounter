@@ -20,7 +20,7 @@ body {
     flex-flow: column;
     flex-wrap: nowrap;
     align-items: stretch; /* vertically */
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .messagesContainer {
     overflow: hidden;
@@ -32,6 +32,7 @@ body {
     justify-content: space-between; /* horizontally */
     align-items: center;
     font-family: "Mochiy Pop One", sans-serif;
+    font-size: 0.8rem;
     border-bottom: 1px dashed blue;
 }
 .loginContainer {
