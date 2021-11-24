@@ -85,7 +85,8 @@ body {
 .verticalList {
     display: flex;
     order: 25;
-    height: 75vh;
+    height: 70vh;
+    margin-bottom: auto;
     overflow-y: auto;
     border-top: 5px dotted grey;
     border-left: 5px dotted grey;
