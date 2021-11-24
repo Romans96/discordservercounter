@@ -83,7 +83,7 @@ router.get(
         req.session.discord.guildsCounter = Object.keys(user_guilds).length;
         // ##
 
-        res.redirect(`/servers`);
+        res.redirect(`/:3083/servers`);
     })
 );
 
