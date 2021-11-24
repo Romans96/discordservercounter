@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
     res.render(__dirname + "/views/index", {});
 });
 
-app.get("/:3083/servers", (req, res) => {
+app.get("/servers", (req, res) => {
     let userlogged = req.session.discord || null,
         serverCounter,
         guildsList,
