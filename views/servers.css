@@ -3,9 +3,12 @@
     --main-bg-color: #181a1b;
 }
 
+html {
+    overflow:hidden;
+}
+
 html,
 body {
-    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     width: 100%;
     height: 100%;
