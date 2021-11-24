@@ -94,7 +94,7 @@ body {
     order: 25;
     height: 75vh;
     /* margin-top: 2vh; */
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
     overflow-y: auto;
     border-top: 5px dotted grey;
     border-left: 5px dotted grey;
