@@ -10,14 +10,14 @@ const {
     tokenAuth,
 } = require("../functions");
 
-const CLIENT_ID = process.env.CLIENT_ID;
-(CLIENT_SECRET = process.env.CLIENT_SECRET),
-    (PORT = process.env.PORT),
-    (BASE_REDIRECT = process.env.BASE_REDIRECT),
-    (REDIRECT_URI = BASE_REDIRECT +"/api/discord/callback");
+const CLIENT_ID = process.env.CLIENT_ID,
+    CLIENT_SECRET = process.env.CLIENT_SECRET,
+    PORT = process.env.PORT,
+    BASE_REDIRECT = process.env.BASE_REDIRECT,
+    REDIRECT_URI = BASE_REDIRECT +"/api/discord/callback";
 router.get("/login", (req, res) => {
     res.redirect(
-        `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify guilds&response_type=code&redirect_uri=${REDIRECT_URI}`
+        `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=identify%20guilds`
         //https://discord.com/api/oauth2/authorize?client_id=911230871393144832&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdiscord%2Fcallback&response_type=code&scope=identify
     );
 });
@@ -25,6 +25,7 @@ router.get("/login", (req, res) => {
 router.get(
     "/callback",
     catchAsync(async (req, res) => {
+        console.log("Test")
         if (!req.query.code) throw new Error("NoCodeProvided");
         // console.log(req.query.code)
         console.log("Join in callback function")
